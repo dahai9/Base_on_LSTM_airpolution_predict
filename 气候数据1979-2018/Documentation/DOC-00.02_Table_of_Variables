@@ -1,0 +1,33 @@
+#===================================================================================================
+# File:		DOC-00.02_Table_of_Variables
+# Category:	Document
+# Version:	01.00.0002
+# Author(s):	Jie He (hejie@mail.iap.ac.cn)
+# Copyright:	(C) 2015-2016 Jie He
+# License:	GNU General Public License version 3 (GPLv3)
+# Date Created:	2014-01-20 by Jie He
+# Last Updated:	2014-02-25 by Jie He
+#---------------------------------------------------------------------------------------------------
+# Description:	Information of variables.
+#===================================================================================================
+
+
+# --  Table of variables.  -------------------------------------------------------------------------
+
+--  B-01: Core product (land system model forcing data).  ------------------------------------------
+
+Variable	Long name				Category	Unit	Resolution	
+
+Temp		2 m air temperature			B-01		K	03hr, 0.10deg
+Pres		Surface air pressure			B-01		Pa	03hr, 0.10deg
+SHum		Specific humidity			B-01		kg kg	03hr, 0.10deg
+Wind		10 m wind speed				B-01		m s-1	03hr, 0.10deg
+SRad		Downward shortwave radiation at surface	B-01		W m-2	03hr, 0.10deg
+LRad		Downward longwave radiation at surface	B-01		W m-2	03hr, 0.10deg
+Prec		Precipitation rate			B-01		mm hr-1	03hr, 0.10deg
+
+--  B-02: Extended product (derived from land system model forcing data).  -------------------------
+
+Variable	Long name				Category	Unit	Resolution	
+
+BCPr		Bias-corrected precipitation rate	B-02		mm hr-1	03hr, 0.10deg

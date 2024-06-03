@@ -1,0 +1,510 @@
+Install requirements：
+ pip install -r requirements.txt
+
+Dataset :
+The datasets is provided by National Tibetan Plateau / Third Pole Environment Data Center (http://data.tpdc.ac.cn).
+https://data.tpdc.ac.cn/zh-hans/data/8028b944-daaa-4511-8769-965612652c49
+www.tianqihoubao.com/
+
+ Running：
+ 1.download dataset:
+ https://data.tpdc.ac.cn/zh-hans/data/8028b944-daaa-4511-8769-965612652c49
+
+ 2.run
+ python spider.py
+ it need about 24 hours
+
+ 3.open jupyter
+ jupyter notebook
+
+the project file tree :
+.
+├── 基于LSTM的空气质量预测算法的研究与实现.ipynb
+├── 气候数据1979-2018
+│   ├── data1.txt
+│   ├── Data_ancillary
+│   │   ├── elev_CMFD_V0106_B-01_010deg.nc
+│   │   ├── mask_CMFD_V0106_B-01_010deg.nc
+│   │   └── mask_CMFD_V0106_B-01_010deg_with_lake.nc
+│   ├── Data_forcing_01dy_010deg
+│   │   ├── lrad_CMFD_V0106_B-01_01dy_010deg_201301-201312.nc
+│   │   ├── lrad_CMFD_V0106_B-01_01dy_010deg_201401-201412.nc
+│   │   ├── lrad_CMFD_V0106_B-01_01dy_010deg_201501-201512.nc
+│   │   ├── lrad_CMFD_V0106_B-01_01dy_010deg_201601-201612.nc
+│   │   ├── lrad_CMFD_V0106_B-01_01dy_010deg_201701-201712.nc
+│   │   ├── lrad_CMFD_V0106_B-01_01dy_010deg_201801-201812.nc
+│   │   ├── prec_CMFD_V0106_B-01_01dy_010deg_201301-201312.nc
+│   │   ├── prec_CMFD_V0106_B-01_01dy_010deg_201401-201412.nc
+│   │   ├── prec_CMFD_V0106_B-01_01dy_010deg_201501-201512.nc
+│   │   ├── prec_CMFD_V0106_B-01_01dy_010deg_201601-201612.nc
+│   │   ├── prec_CMFD_V0106_B-01_01dy_010deg_201701-201712.nc
+│   │   ├── prec_CMFD_V0106_B-01_01dy_010deg_201801-201812.nc
+│   │   ├── pres_CMFD_V0106_B-01_01dy_010deg_201301-201312.nc
+│   │   ├── pres_CMFD_V0106_B-01_01dy_010deg_201401-201412.nc
+│   │   ├── pres_CMFD_V0106_B-01_01dy_010deg_201501-201512.nc
+│   │   ├── pres_CMFD_V0106_B-01_01dy_010deg_201601-201612.nc
+│   │   ├── pres_CMFD_V0106_B-01_01dy_010deg_201701-201712.nc
+│   │   ├── pres_CMFD_V0106_B-01_01dy_010deg_201801-201812.nc
+│   │   ├── shum_CMFD_V0106_B-01_01dy_010deg_201301-201312.nc
+│   │   ├── shum_CMFD_V0106_B-01_01dy_010deg_201401-201412.nc
+│   │   ├── shum_CMFD_V0106_B-01_01dy_010deg_201501-201512.nc
+│   │   ├── shum_CMFD_V0106_B-01_01dy_010deg_201601-201612.nc
+│   │   ├── shum_CMFD_V0106_B-01_01dy_010deg_201701-201712.nc
+│   │   ├── shum_CMFD_V0106_B-01_01dy_010deg_201801-201812.nc
+│   │   ├── srad_CMFD_V0106_B-01_01dy_010deg_201301-201312.nc
+│   │   ├── srad_CMFD_V0106_B-01_01dy_010deg_201401-201412.nc
+│   │   ├── srad_CMFD_V0106_B-01_01dy_010deg_201501-201512.nc
+│   │   ├── srad_CMFD_V0106_B-01_01dy_010deg_201601-201612.nc
+│   │   ├── srad_CMFD_V0106_B-01_01dy_010deg_201701-201712.nc
+│   │   ├── srad_CMFD_V0106_B-01_01dy_010deg_201801-201812.nc
+│   │   ├── temp_CMFD_V0106_B-01_01dy_010deg_201301-201312.nc
+│   │   ├── temp_CMFD_V0106_B-01_01dy_010deg_201401-201412.nc
+│   │   ├── temp_CMFD_V0106_B-01_01dy_010deg_201501-201512.nc
+│   │   ├── temp_CMFD_V0106_B-01_01dy_010deg_201601-201612.nc
+│   │   ├── temp_CMFD_V0106_B-01_01dy_010deg_201701-201712.nc
+│   │   ├── temp_CMFD_V0106_B-01_01dy_010deg_201801-201812.nc
+│   │   ├── wind_CMFD_V0106_B-01_01dy_010deg_201301-201312.nc
+│   │   ├── wind_CMFD_V0106_B-01_01dy_010deg_201401-201412.nc
+│   │   ├── wind_CMFD_V0106_B-01_01dy_010deg_201501-201512.nc
+│   │   ├── wind_CMFD_V0106_B-01_01dy_010deg_201601-201612.nc
+│   │   ├── wind_CMFD_V0106_B-01_01dy_010deg_201701-201712.nc
+│   │   └── wind_CMFD_V0106_B-01_01dy_010deg_201801-201812.nc
+│   ├── datalist
+│   ├── datalist.bak
+│   ├── dataset.csv
+│   ├── data.txt
+│   ├── Documentation
+│   │   ├── DOC-00.01_Dataset_Information
+│   │   ├── DOC-00.02_Table_of_Variables
+│   │   └── DOC-01.01_Dataset_Description
+│   │       ├── User's guide for China meteorological forcing data.pdf
+│   │       └── User's guide for China meteorological forcing.pdf
+│   ├── download.txt
+│   ├── my_list.pkl
+│   ├── my_list.txt
+│   ├── Software
+│   │   └── PRG-01.01_Data_Read_Example.f90
+│   ├── sorted_dataset.csv
+│   └── Untitled.ipynb
+├── data
+│   ├── 2014-2018北京-空气质量-气候.csv
+│   ├── 2014-2018北京-空气质量.csv
+│   ├── 2014-2018长春-空气质量-气候.csv
+│   ├── 2014-2018长春-空气质量.csv
+│   ├── 2014-2018长沙-空气质量-气候.csv
+│   ├── 2014-2018长沙-空气质量.csv
+│   ├── 2014-2018成都-空气质量-气候.csv
+│   ├── 2014-2018成都-空气质量.csv
+│   ├── 2014-2018福州-空气质量-气候.csv
+│   ├── 2014-2018福州-空气质量.csv
+│   ├── 2014-2018广州-空气质量-气候.csv
+│   ├── 2014-2018广州-空气质量.csv
+│   ├── 2014-2018贵阳-空气质量-气候.csv
+│   ├── 2014-2018贵阳-空气质量.csv
+│   ├── 2014-2018哈尔滨-空气质量-气候.csv
+│   ├── 2014-2018哈尔滨-空气质量.csv
+│   ├── 2014-2018杭州-空气质量-气候.csv
+│   ├── 2014-2018杭州-空气质量.csv
+│   ├── 2014-2018合肥-空气质量-气候.csv
+│   ├── 2014-2018合肥-空气质量.csv
+│   ├── 2014-2018呼和浩特-空气质量-气候.csv
+│   ├── 2014-2018呼和浩特-空气质量.csv
+│   ├── 2014-2018济南-空气质量-气候.csv
+│   ├── 2014-2018济南-空气质量.csv
+│   ├── 2014-2018昆明-空气质量-气候.csv
+│   ├── 2014-2018昆明-空气质量.csv
+│   ├── 2014-2018拉萨-空气质量-气候.csv
+│   ├── 2014-2018拉萨-空气质量.csv
+│   ├── 2014-2018兰州-空气质量-气候.csv
+│   ├── 2014-2018兰州-空气质量.csv
+│   ├── 2014-2018南昌-空气质量-气候.csv
+│   ├── 2014-2018南昌-空气质量.csv
+│   ├── 2014-2018南京-空气质量-气候.csv
+│   ├── 2014-2018南京-空气质量.csv
+│   ├── 2014-2018南宁-空气质量-气候.csv
+│   ├── 2014-2018南宁-空气质量.csv
+│   ├── 2014-2018上海-空气质量-气候.csv
+│   ├── 2014-2018上海-空气质量.csv
+│   ├── 2014-2018深圳-空气质量-气候.csv
+│   ├── 2014-2018深圳-空气质量.csv
+│   ├── 2014-2018沈阳-空气质量-气候.csv
+│   ├── 2014-2018沈阳-空气质量.csv
+│   ├── 2014-2018石家庄-空气质量-气候.csv
+│   ├── 2014-2018石家庄-空气质量.csv
+│   ├── 2014-2018太原-空气质量-气候.csv
+│   ├── 2014-2018太原-空气质量.csv
+│   ├── 2014-2018天津-空气质量-气候.csv
+│   ├── 2014-2018天津-空气质量.csv
+│   ├── 2014-2018乌鲁木齐-空气质量-气候.csv
+│   ├── 2014-2018乌鲁木齐-空气质量.csv
+│   ├── 2014-2018武汉-空气质量-气候.csv
+│   ├── 2014-2018武汉-空气质量.csv
+│   ├── 2014-2018西安-空气质量-气候.csv
+│   ├── 2014-2018西安-空气质量.csv
+│   ├── 2014-2018西宁-空气质量-气候.csv
+│   ├── 2014-2018西宁-空气质量.csv
+│   ├── 2014-2018银川-空气质量-气候.csv
+│   ├── 2014-2018银川-空气质量.csv
+│   ├── 2014-2018郑州-空气质量-气候.csv
+│   ├── 2014-2018郑州-空气质量.csv
+│   ├── 2014-2018重庆-空气质量-气候.csv
+│   ├── 2014-2018重庆-空气质量.csv
+│   ├── 2014-beijing-空气质量.csv
+│   ├── 2014-changchun-空气质量.csv
+│   ├── 2014-changsha-空气质量.csv
+│   ├── 2014-chengdu-空气质量.csv
+│   ├── 2014-chongqing-空气质量.csv
+│   ├── 2014-fuzhou-空气质量.csv
+│   ├── 2014-guangzhou-空气质量.csv
+│   ├── 2014-guiyang-空气质量.csv
+│   ├── 2014-haerbin-空气质量.csv
+│   ├── 2014-hangzhou-空气质量.csv
+│   ├── 2014-hefei-空气质量.csv
+│   ├── 2014-huhehaote-空气质量.csv
+│   ├── 2014-jinan-空气质量.csv
+│   ├── 2014-kunming-空气质量.csv
+│   ├── 2014-lanzhou-空气质量.csv
+│   ├── 2014-lasa-空气质量.csv
+│   ├── 2014-nanchang-空气质量.csv
+│   ├── 2014-nanjing-空气质量.csv
+│   ├── 2014-nanning-空气质量.csv
+│   ├── 2014-shanghai-空气质量.csv
+│   ├── 2014-shenyang-空气质量.csv
+│   ├── 2014-shenzhen-空气质量.csv
+│   ├── 2014-shijiazhuang-空气质量.csv
+│   ├── 2014-taiyuan-空气质量.csv
+│   ├── 2014-tianjin-空气质量.csv
+│   ├── 2014-wuhan-空气质量.csv
+│   ├── 2014-wulumuqi-空气质量.csv
+│   ├── 2014-xian-空气质量.csv
+│   ├── 2014-xining-空气质量.csv
+│   ├── 2014-yinchuan-空气质量.csv
+│   ├── 2014-zhengzhou-空气质量.csv
+│   ├── 2015-beijing-空气质量.csv
+│   ├── 2015-changchun-空气质量.csv
+│   ├── 2015-changsha-空气质量.csv
+│   ├── 2015-chengdu-空气质量.csv
+│   ├── 2015-chongqing-空气质量.csv
+│   ├── 2015-fuzhou-空气质量.csv
+│   ├── 2015-guangzhou-空气质量.csv
+│   ├── 2015-guiyang-空气质量.csv
+│   ├── 2015-haerbin-空气质量.csv
+│   ├── 2015-hangzhou-空气质量.csv
+│   ├── 2015-hefei-空气质量.csv
+│   ├── 2015-huhehaote-空气质量.csv
+│   ├── 2015-jinan-空气质量.csv
+│   ├── 2015-kunming-空气质量.csv
+│   ├── 2015-lanzhou-空气质量.csv
+│   ├── 2015-lasa-空气质量.csv
+│   ├── 2015-nanchang-空气质量.csv
+│   ├── 2015-nanjing-空气质量.csv
+│   ├── 2015-nanning-空气质量.csv
+│   ├── 2015-shanghai-空气质量.csv
+│   ├── 2015-shenyang-空气质量.csv
+│   ├── 2015-shenzhen-空气质量.csv
+│   ├── 2015-shijiazhuang-空气质量.csv
+│   ├── 2015-taiyuan-空气质量.csv
+│   ├── 2015-tianjin-空气质量.csv
+│   ├── 2015-wuhan-空气质量.csv
+│   ├── 2015-wulumuqi-空气质量.csv
+│   ├── 2015-xian-空气质量.csv
+│   ├── 2015-xining-空气质量.csv
+│   ├── 2015-yinchuan-空气质量.csv
+│   ├── 2015-zhengzhou-空气质量.csv
+│   ├── 2016-beijing-空气质量.csv
+│   ├── 2016-changchun-空气质量.csv
+│   ├── 2016-changsha-空气质量.csv
+│   ├── 2016-chengdu-空气质量.csv
+│   ├── 2016-chongqing-空气质量.csv
+│   ├── 2016-fuzhou-空气质量.csv
+│   ├── 2016-guangzhou-空气质量.csv
+│   ├── 2016-guiyang-空气质量.csv
+│   ├── 2016-haerbin-空气质量.csv
+│   ├── 2016-hangzhou-空气质量.csv
+│   ├── 2016-hefei-空气质量.csv
+│   ├── 2016-huhehaote-空气质量.csv
+│   ├── 2016-jinan-空气质量.csv
+│   ├── 2016-kunming-空气质量.csv
+│   ├── 2016-lanzhou-空气质量.csv
+│   ├── 2016-lasa-空气质量.csv
+│   ├── 2016-nanchang-空气质量.csv
+│   ├── 2016-nanjing-空气质量.csv
+│   ├── 2016-nanning-空气质量.csv
+│   ├── 2016-shanghai-空气质量.csv
+│   ├── 2016-shenyang-空气质量.csv
+│   ├── 2016-shenzhen-空气质量.csv
+│   ├── 2016-shijiazhuang-空气质量.csv
+│   ├── 2016-taiyuan-空气质量.csv
+│   ├── 2016-tianjin-空气质量.csv
+│   ├── 2016-wuhan-空气质量.csv
+│   ├── 2016-wulumuqi-空气质量.csv
+│   ├── 2016-xian-空气质量.csv
+│   ├── 2016-xining-空气质量.csv
+│   ├── 2016-yinchuan-空气质量.csv
+│   ├── 2016-zhengzhou-空气质量.csv
+│   ├── 2017-beijing-空气质量.csv
+│   ├── 2017-changchun-空气质量.csv
+│   ├── 2017-changsha-空气质量.csv
+│   ├── 2017-chengdu-空气质量.csv
+│   ├── 2017-chongqing-空气质量.csv
+│   ├── 2017-fuzhou-空气质量.csv
+│   ├── 2017-guangzhou-空气质量.csv
+│   ├── 2017-guiyang-空气质量.csv
+│   ├── 2017-haerbin-空气质量.csv
+│   ├── 2017-hangzhou-空气质量.csv
+│   ├── 2017-hefei-空气质量.csv
+│   ├── 2017-huhehaote-空气质量.csv
+│   ├── 2017-jinan-空气质量.csv
+│   ├── 2017-kunming-空气质量.csv
+│   ├── 2017-lanzhou-空气质量.csv
+│   ├── 2017-lasa-空气质量.csv
+│   ├── 2017-nanchang-空气质量.csv
+│   ├── 2017-nanjing-空气质量.csv
+│   ├── 2017-nanning-空气质量.csv
+│   ├── 2017-shanghai-空气质量.csv
+│   ├── 2017-shenyang-空气质量.csv
+│   ├── 2017-shenzhen-空气质量.csv
+│   ├── 2017-shijiazhuang-空气质量.csv
+│   ├── 2017-taiyuan-空气质量.csv
+│   ├── 2017-tianjin-空气质量.csv
+│   ├── 2017-wuhan-空气质量.csv
+│   ├── 2017-wulumuqi-空气质量.csv
+│   ├── 2017-xian-空气质量.csv
+│   ├── 2017-xining-空气质量.csv
+│   ├── 2017-yinchuan-空气质量.csv
+│   ├── 2017-zhengzhou-空气质量.csv
+│   ├── 2018-beijing-空气质量.csv
+│   ├── 2018-changchun-空气质量.csv
+│   ├── 2018-changsha-空气质量.csv
+│   ├── 2018-chengdu-空气质量.csv
+│   ├── 2018-chongqing-空气质量.csv
+│   ├── 2018-fuzhou-空气质量.csv
+│   ├── 2018-guangzhou-空气质量.csv
+│   ├── 2018-guiyang-空气质量.csv
+│   ├── 2018-haerbin-空气质量.csv
+│   ├── 2018-hangzhou-空气质量.csv
+│   ├── 2018-hefei-空气质量.csv
+│   ├── 2018-huhehaote-空气质量.csv
+│   ├── 2018-jinan-空气质量.csv
+│   ├── 2018-kunming-空气质量.csv
+│   ├── 2018-lanzhou-空气质量.csv
+│   ├── 2018-lasa-空气质量.csv
+│   ├── 2018-nanchang-空气质量.csv
+│   ├── 2018-nanjing-空气质量.csv
+│   ├── 2018-nanning-空气质量.csv
+│   ├── 2018-shanghai-空气质量.csv
+│   ├── 2018-shenyang-空气质量.csv
+│   ├── 2018-shenzhen-空气质量.csv
+│   ├── 2018-shijiazhuang-空气质量.csv
+│   ├── 2018-taiyuan-空气质量.csv
+│   ├── 2018-tianjin-空气质量.csv
+│   ├── 2018-wuhan-空气质量.csv
+│   ├── 2018-wulumuqi-空气质量.csv
+│   ├── 2018-xian-空气质量.csv
+│   ├── 2018-xining-空气质量.csv
+│   ├── 2018-yinchuan-空气质量.csv
+│   ├── 2018-zhengzhou-空气质量.csv
+│   ├── 2019-beijing-空气质量.csv
+│   ├── 2019-changchun-空气质量.csv
+│   ├── 2019-changsha-空气质量.csv
+│   ├── 2019-chengdu-空气质量.csv
+│   ├── 2019-chongqing-空气质量.csv
+│   ├── 2019-fuzhou-空气质量.csv
+│   ├── 2019-guangzhou-空气质量.csv
+│   ├── 2019-guiyang-空气质量.csv
+│   ├── 2019-haerbin-空气质量.csv
+│   ├── 2019-hangzhou-空气质量.csv
+│   ├── 2019-hefei-空气质量.csv
+│   ├── 2019-huhehaote-空气质量.csv
+│   ├── 2019-jinan-空气质量.csv
+│   ├── 2019-kunming-空气质量.csv
+│   ├── 2019-lanzhou-空气质量.csv
+│   ├── 2019-lasa-空气质量.csv
+│   ├── 2019-nanchang-空气质量.csv
+│   ├── 2019-nanjing-空气质量.csv
+│   ├── 2019-nanning-空气质量.csv
+│   ├── 2019-shanghai-空气质量.csv
+│   ├── 2019-shenyang-空气质量.csv
+│   ├── 2019-shenzhen-空气质量.csv
+│   ├── 2019-shijiazhuang-空气质量.csv
+│   ├── 2019-taiyuan-空气质量.csv
+│   ├── 2019-tianjin-空气质量.csv
+│   ├── 2019-wuhan-空气质量.csv
+│   ├── 2019-wulumuqi-空气质量.csv
+│   ├── 2019-xian-空气质量.csv
+│   ├── 2019-xining-空气质量.csv
+│   ├── 2019-yinchuan-空气质量.csv
+│   ├── 2019-zhengzhou-空气质量.csv
+│   ├── 2020-beijing-空气质量.csv
+│   ├── 2020-changchun-空气质量.csv
+│   ├── 2020-changsha-空气质量.csv
+│   ├── 2020-chengdu-空气质量.csv
+│   ├── 2020-chongqing-空气质量.csv
+│   ├── 2020-fuzhou-空气质量.csv
+│   ├── 2020-guangzhou-空气质量.csv
+│   ├── 2020-guiyang-空气质量.csv
+│   ├── 2020-haerbin-空气质量.csv
+│   ├── 2020-hangzhou-空气质量.csv
+│   ├── 2020-hefei-空气质量.csv
+│   ├── 2020-huhehaote-空气质量.csv
+│   ├── 2020-jinan-空气质量.csv
+│   ├── 2020-kunming-空气质量.csv
+│   ├── 2020-lanzhou-空气质量.csv
+│   ├── 2020-lasa-空气质量.csv
+│   ├── 2020-nanchang-空气质量.csv
+│   ├── 2020-nanjing-空气质量.csv
+│   ├── 2020-nanning-空气质量.csv
+│   ├── 2020-shanghai-空气质量.csv
+│   ├── 2020-shenyang-空气质量.csv
+│   ├── 2020-shenzhen-空气质量.csv
+│   ├── 2020-shijiazhuang-空气质量.csv
+│   ├── 2020-taiyuan-空气质量.csv
+│   ├── 2020-tianjin-空气质量.csv
+│   ├── 2020-wuhan-空气质量.csv
+│   ├── 2020-wulumuqi-空气质量.csv
+│   ├── 2020-xian-空气质量.csv
+│   ├── 2020-xining-空气质量.csv
+│   ├── 2020-yinchuan-空气质量.csv
+│   ├── 2020-zhengzhou-空气质量.csv
+│   ├── 2021-beijing-空气质量.csv
+│   ├── 2021-changchun-空气质量.csv
+│   ├── 2021-changsha-空气质量.csv
+│   ├── 2021-chengdu-空气质量.csv
+│   ├── 2021-chongqing-空气质量.csv
+│   ├── 2021-fuzhou-空气质量.csv
+│   ├── 2021-guangzhou-空气质量.csv
+│   ├── 2021-guiyang-空气质量.csv
+│   ├── 2021-haerbin-空气质量.csv
+│   ├── 2021-hangzhou-空气质量.csv
+│   ├── 2021-hefei-空气质量.csv
+│   ├── 2021-huhehaote-空气质量.csv
+│   ├── 2021-jinan-空气质量.csv
+│   ├── 2021-kunming-空气质量.csv
+│   ├── 2021-lanzhou-空气质量.csv
+│   ├── 2021-lasa-空气质量.csv
+│   ├── 2021-nanchang-空气质量.csv
+│   ├── 2021-nanjing-空气质量.csv
+│   ├── 2021-nanning-空气质量.csv
+│   ├── 2021-shanghai-空气质量.csv
+│   ├── 2021-shenyang-空气质量.csv
+│   ├── 2021-shenzhen-空气质量.csv
+│   ├── 2021-shijiazhuang-空气质量.csv
+│   ├── 2021-taiyuan-空气质量.csv
+│   ├── 2021-tianjin-空气质量.csv
+│   ├── 2021-wuhan-空气质量.csv
+│   ├── 2021-wulumuqi-空气质量.csv
+│   ├── 2021-xian-空气质量.csv
+│   ├── 2021-xining-空气质量.csv
+│   ├── 2021-yinchuan-空气质量.csv
+│   ├── 2021-zhengzhou-空气质量.csv
+│   ├── 2022-beijing-空气质量.csv
+│   ├── 2022-changchun-空气质量.csv
+│   ├── 2022-changsha-空气质量.csv
+│   ├── 2022-chengdu-空气质量.csv
+│   ├── 2022-chongqing-空气质量.csv
+│   ├── 2022-fuzhou-空气质量.csv
+│   ├── 2022-guangzhou-空气质量.csv
+│   ├── 2022-guiyang-空气质量.csv
+│   ├── 2022-haerbin-空气质量.csv
+│   ├── 2022-hangzhou-空气质量.csv
+│   ├── 2022-hefei-空气质量.csv
+│   ├── 2022-huhehaote-空气质量.csv
+│   ├── 2022-jinan-空气质量.csv
+│   ├── 2022-kunming-空气质量.csv
+│   ├── 2022-lanzhou-空气质量.csv
+│   ├── 2022-lasa-空气质量.csv
+│   ├── 2022-nanchang-空气质量.csv
+│   ├── 2022-nanjing-空气质量.csv
+│   ├── 2022-nanning-空气质量.csv
+│   ├── 2022-shanghai-空气质量.csv
+│   ├── 2022-shenyang-空气质量.csv
+│   ├── 2022-shenzhen-空气质量.csv
+│   ├── 2022-shijiazhuang-空气质量.csv
+│   ├── 2022-taiyuan-空气质量.csv
+│   ├── 2022-tianjin-空气质量.csv
+│   ├── 2022-wuhan-空气质量.csv
+│   ├── 2022-wulumuqi-空气质量.csv
+│   ├── 2022-xian-空气质量.csv
+│   ├── 2022-xining-空气质量.csv
+│   ├── 2022-yinchuan-空气质量.csv
+│   ├── 2022-zhengzhou-空气质量.csv
+│   ├── 2023-beijing-空气质量.csv
+│   ├── 2023-changchun-空气质量.csv
+│   ├── 2023-changsha-空气质量.csv
+│   ├── 2023-chengdu-空气质量.csv
+│   ├── 2023-chongqing-空气质量.csv
+│   ├── 2023-fuzhou-空气质量.csv
+│   ├── 2023-guangzhou-空气质量.csv
+│   ├── 2023-guiyang-空气质量.csv
+│   ├── 2023-haerbin-空气质量.csv
+│   ├── 2023-hangzhou-空气质量.csv
+│   ├── 2023-hefei-空气质量.csv
+│   ├── 2023-huhehaote-空气质量.csv
+│   ├── 2023-jinan-空气质量.csv
+│   ├── 2023-kunming-空气质量.csv
+│   ├── 2023-lanzhou-空气质量.csv
+│   ├── 2023-lasa-空气质量.csv
+│   ├── 2023-nanchang-空气质量.csv
+│   ├── 2023-nanjing-空气质量.csv
+│   ├── 2023-nanning-空气质量.csv
+│   ├── 2023-shanghai-空气质量.csv
+│   ├── 2023-shenyang-空气质量.csv
+│   ├── 2023-shenzhen-空气质量.csv
+│   ├── 2023-shijiazhuang-空气质量.csv
+│   ├── 2023-taiyuan-空气质量.csv
+│   ├── 2023-tianjin-空气质量.csv
+│   ├── 2023-wuhan-空气质量.csv
+│   ├── 2023-wulumuqi-空气质量.csv
+│   ├── 2023-xian-空气质量.csv
+│   ├── 2023-xining-空气质量.csv
+│   ├── 2023-yinchuan-空气质量.csv
+│   ├── 2023-zhengzhou-空气质量.csv
+│   ├── 各指标折线图.svg
+│   ├── AQI折线图.svg
+│   └── merged_file.csv
+├── MAPE准确率.csv
+├── MAPE准确率.xlsx
+├── model
+│   ├── 北京512-3.params
+│   ├── 北京.params
+│   ├── 长春512-3.params
+│   ├── 长沙512-3.params
+│   ├── 成都512-3.params
+│   ├── 福州512-3.params
+│   ├── 广州512-3.params
+│   ├── 贵阳512-3.params
+│   ├── 哈尔滨512-3.params
+│   ├── 杭州512-3.params
+│   ├── 合肥512-3.params
+│   ├── 呼和浩特512-3.params
+│   ├── 济南512-3.params
+│   ├── 昆明512-3.params
+│   ├── 拉萨512-3.params
+│   ├── 兰州512-3.params
+│   ├── 南昌512-3.params
+│   ├── 南京512-3.params
+│   ├── 南宁512-3.params
+│   ├── 上海512-3.params
+│   ├── 上海.params
+│   ├── 深圳512-3.params
+│   ├── 沈阳512-3.params
+│   ├── 石家庄512-3.params
+│   ├── 太原512-3.params
+│   ├── 天津512-3.params
+│   ├── 乌鲁木齐512-3.params
+│   ├── 武汉512-3.params
+│   ├── 西安512-3.params
+│   ├── 西宁512-3.params
+│   ├── 银川512-3.params
+│   ├── 郑州512-3.params
+│   ├── 重庆512-3.params
+│   └── mlp.params
+├── my_list.txt
+├── README
+├── requirements.txt
+├── RMSE.csv
+├── RMSE.xlsx
+├── sorted_dataset.csv
+└── spider.py
+
+9 directories, 479 files

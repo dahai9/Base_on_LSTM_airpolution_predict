@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# 检查参数是否传入
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <file>"
+    exit 1
+fi
+
+# 从命令行参数中获取文件名
+file="$1"
+
+# 检查文件是否存在
+if [ ! -f "$file" ]; then
+    echo "File not found: $file"
+    exit 1
+fi
+
+# 逐行读取文件内容
+while IFS= read -r line; do
+    echo "下载中: $line"
+    gzip -d ~/backup/气候数据1979-2018/Data_forcing_01dy_010deg/$line
+    # 在这里可以对每一行的内容进行处理
+done < "$file"
+

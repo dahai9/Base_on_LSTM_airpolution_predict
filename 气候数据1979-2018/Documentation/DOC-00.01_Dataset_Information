@@ -1,0 +1,27 @@
+#===================================================================================================
+# File:		DOC-00.01_Dataset_Information
+# Category:	Document
+# Version:	01.00.0002
+# Author(s):	Jie He (hejie@mail.iap.ac.cn)
+# Copyright:	(C) 2015-2016 Jie He
+# License:	GNU General Public License version 3 (GPLv3)
+# Date Created:	2014-01-20 by Jie He
+# Last Updated:	2015-08-30 by Jie He
+#---------------------------------------------------------------------------------------------------
+# Description:	Dataset information.
+#===================================================================================================
+
+
+# --  Dataset information.  ------------------------------------------------------------------------
+
+Name:		ITPCAS (Institute of Tibetan Plateau Research, Chinese Academy of Sciences) China Meteorological Forcing Dataset
+
+Version:	01.06.0014
+
+Updated Date:	2017-04-16
+
+Download Date:	Unknown
+
+Download From:	ftp://hpcc.itpcas.ac.cn/Data/DAT-31.0002.02.16.NG_ITPCAS-CMFD_B_v1.6
+
+Description:	None
